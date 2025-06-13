@@ -21,7 +21,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --system
+          uv venv .venv
+          source .venv/bin/activate
+          uv sync
 
       - name: Run Python script
         run: uv run python main.py
@@ -42,7 +44,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --system
+          uv venv .venv
+          source .venv/bin/activate
+          uv sync
 
       - name: Run tests
         run: |
