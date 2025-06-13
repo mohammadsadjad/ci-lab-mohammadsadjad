@@ -45,4 +45,4 @@ jobs:
           uv sync
 
       - name: Run tests
-        run: uv run pytest -v
+        run: PYTHONPATH=. uv run pytest -v
