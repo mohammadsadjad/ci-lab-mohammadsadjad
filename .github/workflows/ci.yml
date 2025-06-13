@@ -45,4 +45,12 @@ jobs:
           uv sync
 
       - name: Run tests
-        run: PYTHONPATH=. uv run pytest -v
+        run: |
+           echo "=== Files in workspace ==="
+           ls -R
+           echo "=== Python version ==="
+           python --version
+           echo "=== PYTHONPATH ==="
+           echo $PYTHONPATH
+           echo "=== Running tests ==="
+           PYTHONPATH=. uv run pytest -v
