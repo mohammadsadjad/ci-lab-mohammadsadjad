@@ -9,7 +9,6 @@ class TestAddFunction(unittest.TestCase):
     def test_add_zero(self):
         self.assertEqual(add(0, 0), 0)
     def test_add_incorrect(self):
-        self.assertEqual(add(2, 2), 5)  # Failing test
-
+        self.assertEqual(add(2, 2), 4)  # Fixed test
 if __name__ == '__main__':
     unittest.main()
