@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
+          uv pip install pytest
           uv sync
 
       - name: Run Python script
@@ -42,6 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
+          uv pip install pytest
           uv sync
 
       - name: Run tests
