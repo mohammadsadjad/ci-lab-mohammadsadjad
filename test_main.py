@@ -8,6 +8,8 @@ class TestAddFunction(unittest.TestCase):
         self.assertEqual(add(-1, -1), -2)
     def test_add_zero(self):
         self.assertEqual(add(0, 0), 0)
+    def test_add_incorrect(self):
+        self.assertEqual(add(2, 2), 5)  # Failing test
 
 if __name__ == '__main__':
     unittest.main()
