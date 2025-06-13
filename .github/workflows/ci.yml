@@ -21,6 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
+          uv venv .venv
+          source .venv/bin/activate
           uv sync
 
       - name: Run Python script
@@ -42,7 +44,17 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
+          uv venv .venv
+          source .venv/bin/activate
           uv sync
 
       - name: Run tests
-        run: uv run pytest test_main.py -v
+        run: |
+           echo "=== Files in workspace ==="
+           ls -R
+           echo "=== Python version ==="
+           python --version
+           echo "=== PYTHONPATH ==="
+           echo $PYTHONPATH
+           echo "=== Running tests ==="
+           PYTHONPATH=. uv run pytest -v
